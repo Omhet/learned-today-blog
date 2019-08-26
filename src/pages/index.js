@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import '../index.css';
 
 class BlogIndex extends React.Component {
   render() {
@@ -30,7 +31,11 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date}</small>
+                <section className="meta">
+                  <small>{node.frontmatter.date}</small>
+                  <small className="dotDivider"></small>
+                  <small>{node.timeToRead} min read</small>
+                </section>
               </header>
               <section>
                 <p
@@ -68,6 +73,7 @@ export const pageQuery = graphql`
             title
             description
           }
+          timeToRead
         }
       }
     }

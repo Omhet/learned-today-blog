@@ -4,7 +4,9 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
+import '../index.css';
+
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -28,15 +30,18 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.title}
             </h1>
-            <p
+            <section
               style={{
-                ...scale(-1 / 5),
                 display: `block`,
                 marginBottom: rhythm(1),
               }}
             >
-              {post.frontmatter.date}
-            </p>
+              <div className="meta">
+                <small>{post.frontmatter.date}</small>
+                <small className="dotDivider"></small>
+                <small>{post.timeToRead} min read</small>
+              </div>
+            </section>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -59,20 +64,27 @@ class BlogPostTemplate extends React.Component {
               padding: 0,
             }}
           >
-            <li>
-              {previous && (
+            {previous && (
+              <li>
                 <Link to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
-              )}
-            </li>
+              </li>
+            )}
+
             <li>
-              {next && (
+              <Link to="/" rel="home">
+                All Posts
+                </Link>
+            </li>
+
+            {next && (
+              <li>
                 <Link to={next.fields.slug} rel="next">
                   {next.frontmatter.title} →
                 </Link>
-              )}
-            </li>
+              </li>
+            )}
           </ul>
         </nav>
       </Layout>
@@ -99,6 +111,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
+      timeToRead
     }
   }
 `

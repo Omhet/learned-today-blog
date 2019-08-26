@@ -5,6 +5,7 @@ module.exports = {
     description: `Vladimir Ivanov's blog on interesting topics of web development`,
     siteUrl: `https://omhet.github.io/learned-today`,
     social: {
+      twitter: `https://twitter.com/`
     },
   },
   plugins: [

@@ -54,7 +54,7 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author}</strong>, passionate web developer from Moscow.
+        Written by <strong>{author}</strong>, passionate web developer based in Moscow.
         {` `}
         {/* <a href={`https://twitter.com/${social.twitter}`}>
           You should follow him on Twitter

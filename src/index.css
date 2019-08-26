@@ -1,0 +1,11 @@
+.meta {
+    color: #808080;
+}
+
+.dotDivider {
+    padding: 0 .5rem;
+}
+
+.dotDivider:after {
+    content: '\00B7';
+}

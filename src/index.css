@@ -1,5 +1,23 @@
+body {
+    font-size: 20px;
+}
+
 a {
     box-shadow: none;
+}
+
+ul {
+    padding-left: 24px;
+}
+
+pre {
+    font-size: 18px;
+    background-color: rgba(71, 75, 123, 0.05);
+    padding: 20px;
+}
+
+code {
+    font-size: 18px;
 }
 
 .meta {

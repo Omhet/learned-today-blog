@@ -1,9 +1,13 @@
 body {
-    font-size: 20px;
+    font-size: 19px;
 }
 
 a {
     box-shadow: none;
+}
+
+h1 {
+    font-size: 64px;
 }
 
 ul {
@@ -11,7 +15,6 @@ ul {
 }
 
 pre {
-    font-size: 18px;
     background-color: rgba(71, 75, 123, 0.05);
     padding: 20px;
 }
@@ -31,3 +34,18 @@ code {
 .dotDivider:after {
     content: '\00B7';
 }
+
+@media (max-width: 500px) {
+    body {
+        font-size: 16px;
+    }
+    code {
+        font-size: 15px;
+    }
+
+    article h1 {
+        font-size: 46px;
+    }
+}
+
+
